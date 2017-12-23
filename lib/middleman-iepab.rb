@@ -1,6 +1,6 @@
 require "middleman-core"
 
 Middleman::Extensions.register :iepab do
-  require "my-extension/extension"
-  MyExtension
+  require "middleman-iepab/extension"
+  Middleman::IEPABExtension
 end
