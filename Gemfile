@@ -5,6 +5,8 @@ source 'https://rubygems.org'
 # Specify your gem's dependencies in middleman-iepab.gemspec
 gemspec
 
+gem 'middleman-cli'
+
 group :development do
   gem 'rake'
   gem 'rdoc'
@@ -15,4 +17,5 @@ group :test do
   gem 'cucumber'
   gem 'aruba'
   gem 'rspec'
+  gem 'capybara'
 end
