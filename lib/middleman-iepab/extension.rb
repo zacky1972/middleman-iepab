@@ -1,5 +1,6 @@
 # Require core library
 require 'middleman-core'
+require 'middleman-core/extensions/external_pipeline'
 
 # Extension namespace
 module Middleman
@@ -14,10 +15,13 @@ module Middleman
 
     def initialize(app, config={}, &block)
       super
+      @app = app
+      @config = config
+      @block = block
     end
 
-    def after_configuration
+    def after_build(builder)
+      ::Middleman::Extensions::ExternalPipeline.new(@app, @config)
     end
-
   end
 end
