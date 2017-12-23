@@ -5,4 +5,4 @@
 /pkg
 
 # Ignore tmp folder
-/tmp
+tmp/

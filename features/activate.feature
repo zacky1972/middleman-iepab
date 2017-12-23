@@ -3,7 +3,12 @@ Feature: middleman-iepab is activated
     Given a fixture app "empty-app"
     And a file named "config.rb" with:
       """
-      activate :iepab
+      activate :iepab, {
+      	name: :echo,
+      	command: "echo hello",
+      	source: "./source",
+      	latency: 1
+      }
       """
     When I run `middleman build --verbose`
     Then the output should not contain "Unknown Extension: iepab"
