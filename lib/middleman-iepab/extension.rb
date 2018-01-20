@@ -1,7 +1,6 @@
 # Require core library
 require 'middleman-core'
 require 'middleman-core/extensions/external_pipeline'
-require 'middleman-core/application'
 
 # Extension namespace
 module Middleman
@@ -26,7 +25,7 @@ module Middleman
     end
 
     def ready()
-      unless ::Middleman::Application::build? then
+      unless mode?(:build) then
         ::Middleman::Extensions::ExternalPipeline.new(@app, @config)
       end
     end
