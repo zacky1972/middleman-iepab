@@ -24,7 +24,7 @@ module Middleman
       ::Middleman::Extensions::ExternalPipeline.new(@app, @config)
     end
 
-    def after_render(builder)
+    def before_server(builder)
       ::Middleman::Extensions::ExternalPipeline.new(@app, @config)
     end
   end
