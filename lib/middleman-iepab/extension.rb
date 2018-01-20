@@ -20,11 +20,7 @@ module Middleman
       @block = block
     end
 
-    def after_build(builder)
-      ::Middleman::Extensions::ExternalPipeline.new(@app, @config)
-    end
-
-    def before_server(builder)
+    def ready(builder)
       ::Middleman::Extensions::ExternalPipeline.new(@app, @config)
     end
   end
