@@ -25,7 +25,7 @@ module Middleman
     end
 
     def ready()
-      unless mode?(:build) then
+      unless @app.mode?(:build) then
         ::Middleman::Extensions::ExternalPipeline.new(@app, @config)
       end
     end
